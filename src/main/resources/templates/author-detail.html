@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <a class="navbar-brand" href="#">ÖzgürLib</a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">AnaSayfa <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Kitap Listesi<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Ekle<span class="sr-only">(current)</span></a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <div class="navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="btn btn-primary" style="">Giriş Yap</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+
+</header>
+
+
+
+<div class="container mt-5" >
+
+    <img class="float-left mr-2 img-rounded" src="data:image/jpeg;base64,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"/>
+
+    <p>2001 yılından beri sektörde eğitimcilik yapan yazar halen kurucu ortağı olduğu kodKamp isimli firmada ve Bahçeşehir Üniversitesinde eğitimcilik kariyerine devam etmektedir. 2011’den beridir üniversitede Android ve programlama üzerine farklı lisans dersleri vermektedir. 10 farklı kitabı olan Taşdelen Microsoft’tan da 7 kez MVP ödülü almış ve Uluslararası .NET Birliğinde Türkiye ve MEA bölgesi yöneticiliği gibi görevler üstlenmiştir. Teknoloji Dergisi isimli online dergide ve kurucusu olduğu Softrik.TV isimli kanalda ise yayıncılık yapmaktadır.</p>
+
+
+
+
+</div>
+
+</body>
+</html>
