@@ -30,8 +30,11 @@ public class Book {
     @Column(length = 13,nullable = false)
     private String isbnNumber;
 
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String serialNumber;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "publisher_id")
@@ -41,12 +44,13 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, Set<Author> authors, String picture, String isbnNumber, String serialNumber,Publisher publisher) {
+    public Book(String name, Set<Author> authors, String picture, String isbnNumber, String serialNumber,String description,Publisher publisher) {
         this.name = name;
         this.authors = authors;
         this.picture = picture;
         this.isbnNumber = isbnNumber;
         this.serialNumber = serialNumber;
+        this.description = description;
         this.publisher = publisher;
     }
 
@@ -96,6 +100,14 @@ public class Book {
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Publisher getPublisher() {
