@@ -1,6 +1,5 @@
 package com.example.OzgurLib.controller;
 
-import com.example.OzgurLib.entities.Book;
 import com.example.OzgurLib.repositories.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
