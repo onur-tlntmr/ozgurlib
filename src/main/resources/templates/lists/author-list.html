@@ -52,7 +52,7 @@
                     <td class="align-middle">
                         <img class=" rounded-circle" style="max-width: 20%;max-height: 20%" th:src="|data:image/jpeg;base64,*{author.photo}|"/>
                     </td>
-                    <td class="align-middle"><a href="#" th:text="*{author.name}"></a></td>
+                    <td class="align-middle"><a th:href="@{/author/showDetail(id=${author.id})}" th:text="*{author.name}"></a></td>
 
                     <td class="align-middle">
                         <a href="#" class="">
