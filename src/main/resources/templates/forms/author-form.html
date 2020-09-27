@@ -27,7 +27,7 @@
 
 <div class="container d-flex align-items-center justify-content-center" >
 
-    <form class="w-50 mt-4" th:object="${author}" action="/author/save" method="post" enctype="multipart/form-data">
+    <form class="w-50 mt-4" th:object="${author}" th:action="@{/author/save}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="authorName">Yazar Adı</label>
             <input type="text" class="form-control" id="authorName" th:field="*{name}" />
