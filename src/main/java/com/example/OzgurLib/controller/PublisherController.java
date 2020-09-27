@@ -1,6 +1,9 @@
 package com.example.OzgurLib.controller;
 
+import com.example.OzgurLib.repositories.PublisherRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,8 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PublisherController {
 
+    @Autowired
+    private PublisherRepo publisherRepo;
+
+
     @GetMapping("/list")
-    public String showList(){
+    public String showList(Model model){
+
+        var publishers = publisherRepo.findAll();
+
+        model.addAttribute("publisherList",publishers);
+
+
         return "lists/publisher-list";
     }
 
