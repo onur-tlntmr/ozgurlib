@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/publisher")
@@ -28,7 +30,7 @@ public class PublisherController {
     }
 
 
-    @GetMapping("/add")
+    @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model model){
 
         Publisher publisher = new Publisher();
@@ -39,5 +41,16 @@ public class PublisherController {
 
     }
 
+    @PostMapping("/save")
+    public String Save(@ModelAttribute("publisher") Publisher publisher){
+
+        publisher.setId(0); //for new record
+
+        publisherRepo.save(publisher);
+
+
+
+        return "redirect:/publisher/list";
+    }
 
 }
