@@ -19,6 +19,10 @@ public class Publisher {
     @Column(columnDefinition = "TEXT")
     String description;
 
+    @Column(length = 200)
+    String webSite;
+
+
     @OneToMany(mappedBy = "publisher",cascade = CascadeType.ALL)
     private List<Book> books;
 
@@ -27,9 +31,9 @@ public class Publisher {
     }
 
 
-    public Publisher(int id, String name, String description) {
-        this.id = id;
+    public Publisher(String name,String webSite, String description) {
         this.name = name;
+        this.webSite = webSite;
         this.description = description;
     }
 
@@ -55,6 +59,14 @@ public class Publisher {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getWebSite() {
+        return webSite;
+    }
+
+    public void setWebSite(String webSite) {
+        this.webSite = webSite;
     }
 
     public List<Book> getBooks() {
