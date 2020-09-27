@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/author")
@@ -66,5 +67,15 @@ public class AuthorController {
 
     }
 
+
+    @GetMapping("/showDetail")
+    public String showDetail(@RequestParam long id , Model model){
+
+        Optional<Author> author = authorRepo.findById(id);
+
+        model.addAttribute(author.get());
+
+        return "details/author-detail";
+    }
 
 }
