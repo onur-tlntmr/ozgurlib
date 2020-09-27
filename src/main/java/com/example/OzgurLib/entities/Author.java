@@ -36,8 +36,7 @@ public class Author {
     public Author() {
     }
 
-    public Author(Long id, String name, String description, String photo, Set<Book> books) {
-        this.id = id;
+    public Author(String name, String description, String photo, Set<Book> books) {
         this.name = name;
         this.description = description;
         this.photo = photo;
@@ -80,7 +79,7 @@ public class Author {
         return books;
     }
 
-    public void setBooks(Set<Book> bookSet) {
-        this.books = bookSet;
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
