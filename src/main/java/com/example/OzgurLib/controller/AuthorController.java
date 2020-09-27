@@ -2,7 +2,6 @@ package com.example.OzgurLib.controller;
 
 import com.example.OzgurLib.entities.Author;
 import com.example.OzgurLib.repositories.AuthorRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +14,12 @@ import java.util.Base64;
 @RequestMapping("/author")
 public class AuthorController {
 
-    @Autowired
-    private AuthorRepo authorRepo;
+    private final AuthorRepo authorRepo;
+
+    //AutoWired
+    public AuthorController(AuthorRepo authorRepo) {
+        this.authorRepo = authorRepo;
+    }
 
 
     @GetMapping("/list")
@@ -55,7 +58,7 @@ public class AuthorController {
 
         author.setPhoto(encodedPicture);
 
-        author.setId(0l); //for new record
+        author.setId(0L); //for new record
 
         authorRepo.save(author);
 

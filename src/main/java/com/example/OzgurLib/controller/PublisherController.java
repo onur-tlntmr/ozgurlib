@@ -2,7 +2,6 @@ package com.example.OzgurLib.controller;
 
 import com.example.OzgurLib.entities.Publisher;
 import com.example.OzgurLib.repositories.PublisherRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PublisherController {
 
-    @Autowired
-    private PublisherRepo publisherRepo;
+    private final PublisherRepo publisherRepo;
+
+    //Autowired
+    public PublisherController(PublisherRepo publisherRepo) {
+        this.publisherRepo = publisherRepo;
+    }
 
 
     @GetMapping("/list")

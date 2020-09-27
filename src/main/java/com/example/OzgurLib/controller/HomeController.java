@@ -1,18 +1,22 @@
 package com.example.OzgurLib.controller;
 
 import com.example.OzgurLib.repositories.BookRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
+
 
 @Controller
 public class HomeController {
 
-    @Autowired
-    BookRepo bookRepo;
+    final BookRepo bookRepo;
+
+    //Autowired
+
+    public HomeController(BookRepo bookRepo) {
+        this.bookRepo = bookRepo;
+    }
 
 
     @GetMapping("/")
