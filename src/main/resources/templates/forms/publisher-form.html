@@ -27,21 +27,21 @@
 
 <div class="container d-flex align-items-center justify-content-center" >
 
-    <form class="w-50 mt-4">
+    <form class="w-50 mt-4" th:object="${publisher}" th:action="@{/publisher/save}" method="post">
         <div class="form-group">
             <label for="publisherName">Yayınevi Adı</label>
-            <input type="text" class="form-control" id="publisherName"/>
+            <input type="text" class="form-control" id="publisherName" th:field="*{name}"/>
         </div>
 
         <div class="form-group">
             <label for="publisherLink">Yayınevi</label>
-            <input type="text" class="form-control" id="publisherLink"/>
+            <input type="text" class="form-control" id="publisherLink" th:field="*{webSite}"/>
         </div>
 
 
         <div class="form-group">
             <label for="publisherDescription">Yayınevi açıklaması</label>
-            <textarea class="form-control" id="publisherDescription" rows="10"></textarea>
+            <textarea class="form-control" id="publisherDescription" rows="10" th:field="*{description}"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
