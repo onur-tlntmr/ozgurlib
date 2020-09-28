@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Kitap Form</title>
+
+
+
+
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -27,31 +31,18 @@
 
     <div class="container d-flex align-items-center justify-content-center" >
 
-        <form class="w-50 mt-4">
+        <form class="w-50 mt-4" th:object="${book}">
             <div class="form-group">
                 <label for="bookName">Kitap Adı</label>
-                <input type="text" class="form-control" id="bookName"/>
+                <input type="text" class="form-control" id="bookName" th:field="*{name}"/>
             </div>
 
             <div class="form-group">
-                <label for="bookSubName">Kitap Alt Adı</label>
-                <input type="text" class="form-control" id="bookSubName"/>
-            </div>
-
-            <div class="form-group">
-                <label for="authorName">Yazar</label>
-                <select id="authorName" class="form-control select2-single">
-                    <option value="">Search state</option>
-                </select>
+                <label for=""></label>
             </div>
 
 
-            <div class="form-group">
-                <label for="publisher">Yayın Evi</label>
-                <select id="publisher" class="form-control select2-single" >
-                <option value="">Search state</option>
-                </select>
-            </div>
+
 
             <div class="form-group">
                 <label for="isbn">Isbn numarası</label>

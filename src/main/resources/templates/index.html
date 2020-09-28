@@ -32,27 +32,26 @@
     <div class="card-group text-center">
 
 
-
         <div class="col-lg-3 p-2" th:each="book:${bookList}">
 
             <a th:href="@{/book/showDetail(id=${book.id})}">
-                <div class="card p-2 card p-2 " >
+                <div class="card p-2 card p-2 ">
                     <img class="card-img-top"
                          th:src="|data:image/jpeg;base64,*{book.picture}|">
 
                     <div class="card-body ">
                         <h6 class="card-title" th:text="*{book.name}"></h6>
 
-                        <th:block th:each="author:*{book.authors}">
-                            <a th:href="@{/author/showDetail(id=${author.id})}" class="card-text" th:text="*{author.name} "></a><br>
-                        </th:block>
+
+                        <a th:href="@{/author/showDetail(id=${book.author.id})}" class="card-text"
+                           th:text="*{book.author.name} "></a><br>
 
 
-                        <a th:href="@{/publisher/showDetail(id=${book.publisher.id})}" class="card-text align-text-bottom" th:text="*{book.publisher.name}"></a>
+                        <a th:href="@{/publisher/showDetail(id=${book.publisher.id})}"
+                           class="card-text align-text-bottom" th:text="*{book.publisher.name}"></a>
                     </div>
                 </div>
             </a>
-
 
 
         </div>

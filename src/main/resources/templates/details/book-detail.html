@@ -38,9 +38,9 @@
                 <ul class="list-group" >
                     <li class="list-group-item" th:text="*{name}" ></li>
 
-                    <li class="list-group-item" th:each="author:${book.authors}">
+                    <li class="list-group-item">
                         Yazar:
-                        <a class="a" th:href="@{/author/showDetail(id=${author.id})}" th:text="${author.name}"></a>
+                        <a class="a" th:href="@{/author/showDetail(id=${book.author.id})}" th:text="${book.author.name}"></a>
                     </li>
 
                     <li class="list-group-item">
