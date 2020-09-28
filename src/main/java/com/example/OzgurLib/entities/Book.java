@@ -68,11 +68,11 @@ public class Book {
         this.name = name;
     }
 
-    public Author getAuthors() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthors(Set<Author> authors) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
