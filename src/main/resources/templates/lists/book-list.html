@@ -56,7 +56,7 @@
                     <td class="align-middle" th:text="*{book.id}"></td>
                     <td class="align-middle"><a th:href="@{/book/showDetail(id=${book.id})}" th:text="*{book.name}"></a></td>
 
-                    <td class="align-middle" >
+                    <td class="align-middle" ">
                         <a th:href="@{/author/showDetail(id=${book.author.id})}" th:text="*{book.author.name} "></a>
                     </td>
 
