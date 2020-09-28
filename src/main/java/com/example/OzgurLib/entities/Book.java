@@ -16,13 +16,11 @@ public class Book {
     @Column(length = 90,nullable = false)
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.REFRESH})
-    @JoinTable(
-            name = "authors_books",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "author_id")
-    )
-    private Set<Author> authors = new HashSet<>();
+
+
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private Author author;
 
     @Lob
     private String picture;
@@ -44,9 +42,9 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, Set<Author> authors, String picture, String isbnNumber, String serialNumber,String description,Publisher publisher) {
+    public Book(String name, Author author, String picture, String isbnNumber, String serialNumber,String description,Publisher publisher) {
         this.name = name;
-        this.authors = authors;
+        this.author = author;
         this.picture = picture;
         this.isbnNumber = isbnNumber;
         this.serialNumber = serialNumber;
@@ -70,12 +68,12 @@ public class Book {
         this.name = name;
     }
 
-    public Set<Author> getAuthors() {
-        return authors;
+    public Author getAuthors() {
+        return author;
     }
 
     public void setAuthors(Set<Author> authors) {
-        this.authors = authors;
+        this.author = author;
     }
 
     public String getPicture() {

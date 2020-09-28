@@ -24,12 +24,7 @@ public class Author {
     @Lob
     private String photo;
 
-    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
-    @JoinTable(
-            name = "authors_books",
-            joinColumns = @JoinColumn(name="author_id"),
-            inverseJoinColumns = @JoinColumn(name="book_id")
-    )
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
     private Set<Book> books = new HashSet<>();
 
 
