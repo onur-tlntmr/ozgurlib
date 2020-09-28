@@ -53,11 +53,11 @@
                 </thead>
                 <tbody>
                 <tr th:each="book:${bookList}">
-                    <td class="align-middle" th:text="*{book.id}">1</td>
-                    <td class="align-middle"><a href="#" th:text="*{book.name}"></a></td>
+                    <td class="align-middle" th:text="*{book.id}"></td>
+                    <td class="align-middle"><a th:href="@{/book/showDetail(id=${book.id})}" th:text="*{book.name}"></a></td>
 
                     <td class="align-middle" th:each="author:*{book.authors}">
-                        <a href="#" th:text="*{author.name} "></a>
+                        <a th:href="@{/author/showDetail(id=${author.id})}" th:text="*{author.name} "></a>
                     </td>
 
                     <td class="align-middle"><a href="#" th:text="*{book.publisher.name}"></a></td>
