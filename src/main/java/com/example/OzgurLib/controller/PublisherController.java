@@ -4,10 +4,9 @@ import com.example.OzgurLib.entities.Publisher;
 import com.example.OzgurLib.repositories.PublisherRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RequestMapping("/publisher")
 @Controller
@@ -32,6 +31,21 @@ public class PublisherController {
         return "lists/publisher-list";
     }
 
+    @GetMapping("/showDetail")
+    public String showDetail(@RequestParam int id,Model model){
+
+        Optional<Publisher> optionalPublisher = publisherRepo.findById(id);
+
+        if(optionalPublisher.isPresent()){
+            Publisher publisher = optionalPublisher.get();
+
+            model.addAttribute(publisher);
+
+        }
+
+        return "details/publisher-detail";
+
+    }
 
     @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model model){
