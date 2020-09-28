@@ -71,10 +71,16 @@ public class AuthorController {
     @GetMapping("/showDetail")
     public String showDetail(@RequestParam long id , Model model){
 
-        Optional<Author> author = authorRepo.findById(id);
+        Optional<Author> optionalAuthor = authorRepo.findById(id);
 
-        model.addAttribute(author.get());
+        Author author;
 
+        if(optionalAuthor.isPresent()) { //if there is record
+
+            author = optionalAuthor.get();
+            model.addAttribute(author);
+
+        }
         return "details/author-detail";
     }
 
