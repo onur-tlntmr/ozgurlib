@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/book")
@@ -41,5 +44,23 @@ public class BookController {
         return "forms/book-form";
 
     }
+
+    @GetMapping("/showDetail")
+    public  String showDetail(@RequestParam long id, Model model){
+
+        Optional<Book> optionalBook = bookRepo.findById(id);
+
+        Book book;
+
+        if(optionalBook.isPresent()){
+            book = optionalBook.get();
+            model.addAttribute(book);
+        }
+
+        return "details/book-detail";
+
+
+    }
+
 
 }
