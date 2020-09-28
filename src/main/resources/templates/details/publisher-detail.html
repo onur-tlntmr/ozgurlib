@@ -26,12 +26,12 @@
 
 
 
-<div class="container mt-5" >
+<div class="container mt-5" th:object="${publisher}">
 
-    <img class="float-left mr-2 img-rounded" style="height: 180px ; width: 180px" th:src="@{pictures/publisher.png}"/>
-    <p class="h3">Pusula yayınevi</p>
+    <img class="float-left mr-2 img-rounded" style="height: 180px ; width: 180px" th:src="@{/pictures/publisher.png}"/>
+    <p class="h3" th:text="*{name}"></p>
 
-    <p>1995 yılında kurulan Pusula Yayıncılık, başta bilişim sektörü olmak üzere, profesyonellere, öğrencilere, çocuklara, beveynelere ve öğretmenlere yönelik yayınlar üretmektedir.</p>
+    <p th:text="*{description}"></p>
 
 
 
