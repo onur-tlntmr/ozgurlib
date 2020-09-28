@@ -48,7 +48,7 @@
                         </th:block>
 
 
-                        <a href="#" class="card-text align-text-bottom" th:text="*{book.publisher.name}"></a>
+                        <a th:href="@{/publisher/showDetail(id=${book.publisher.id})}" class="card-text align-text-bottom" th:text="*{book.publisher.name}"></a>
                     </div>
                 </div>
             </a>

@@ -50,7 +50,7 @@
                 <tbody>
                 <tr th:each="publisher:${publisherList}">
                     <td class="align-middle" th:text="*{publisher.id}"></td>
-                    <td class="align-middle"><a href="#" th:text="*{publisher.name}"></a></td>
+                    <td class="align-middle"><a th:href="@{/publisher/showDetail(id=${publisher.id})}" th:text="*{publisher.name}"></a></td>
                     <td class="align-middle"><a th:href="*{publisher.webSite}"><img
                             style="width: 2em;height: 2em" th:src="@{/icons/world-wide-web.png}"/> </a></td>
                     <td class="align-middle">

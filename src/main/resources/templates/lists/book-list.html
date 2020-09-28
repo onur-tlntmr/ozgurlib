@@ -60,7 +60,7 @@
                         <a th:href="@{/author/showDetail(id=${author.id})}" th:text="*{author.name} "></a>
                     </td>
 
-                    <td class="align-middle"><a href="#" th:text="*{book.publisher.name}"></a></td>
+                    <td class="align-middle"><a th:href="@{/publisher/showDetail(id=${book.publisher.id})}" th:text="*{book.publisher.name}"></a></td>
 
                     <td class="align-middle" th:text="*{book.isbnNumber}"></td>
                     <td class="align-middle" th:text="*{book.serialNumber}"></td>
