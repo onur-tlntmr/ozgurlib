@@ -5,8 +5,6 @@
     <title>Kitap Form</title>
 
 
-
-
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -28,47 +26,63 @@
 <div th:replace="fragments/header :: header"/>
 
 
+<div class="container d-flex align-items-center justify-content-center">
 
-    <div class="container d-flex align-items-center justify-content-center" >
+    <form class="w-50 mt-4" th:object="${book}" enctype="multipart/form-data" method="post" th:action="@{/book/save}">
+        <div class="form-group">
+            <label for="bookName">Kitap Adı</label>
+            <input type="text" class="form-control" id="bookName" th:field="*{name}" required/>
+        </div>
 
-        <form class="w-50 mt-4" th:object="${book}">
-            <div class="form-group">
-                <label for="bookName">Kitap Adı</label>
-                <input type="text" class="form-control" id="bookName" th:field="*{name}"/>
-            </div>
+        <div class="form-group">
+            <select class="custom-select" required th:field="${book.author.id}">
 
-            <div class="form-group">
-                <label for=""></label>
-            </div>
+                <option value="0" selected>Yazar</option>
+                <th:block th:each="author:${authorList}">
+                    <option th:value="${author.id}" th:text="|(${author.id})   ${author.name}|"></option>
+                </th:block>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="custom-select" th:field="*{publisher.id}" required>
+
+                <option selected value="0">Yayın Evi</option>
+                <th:block th:each="thePublisher:${publisherList}">
+                    <option th:value="${thePublisher.id}"
+                            th:text="|(${thePublisher.id})   ${thePublisher.name}|"></option>
+                </th:block>
+
+            </select>
+        </div>
 
 
+        <div class="form-group">
+            <label for="isbn">Isbn numarası</label>
+            <input type="number" class="form-control" id="isbn" th:field="*{isbnNumber}" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="serialNumber">Seri Numarası</label>
+            <input type="number" class="form-control" id="serialNumber" th:field="*{serialNumber}" required/>
+        </div>
 
 
-            <div class="form-group">
-                <label for="isbn">Isbn numarası</label>
-                <input type="text" class="form-control" id="isbn"/>
-            </div>
+        <div class="form-group">
+            <label for="bookPicture">Kitabın kapağı</label>
+            <input type="file" id="bookPicture" name="photo" class="form-control-file" required/>
+        </div>
 
-            <div class="form-group">
-                <label for="serialNumber">Seri Numarası</label>
-                <input type="text" class="form-control" id="serialNumber"/>
-            </div>
+        <div class="form-group">
+            <label for="bookDescription">Kitabın açıklaması</label>
+            <textarea class="form-control" id="bookDescription" rows="10" th:field="*{description}" required></textarea>
+        </div>
 
+        <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
 
-            <div class="form-group">
-                <label for="bookPicture">Kitabın kapağı</label>
-                <input type="file" class="form-control-file" id="bookPicture">
-            </div>
+    </form>
 
-            <div class="form-group">
-                <label for="bookDescription">Kitabın açıklaması</label>
-                <textarea class="form-control" id="bookDescription" rows="10"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
-
-        </form>
-
-    </div>
+</div>
 </body>
 </html>
