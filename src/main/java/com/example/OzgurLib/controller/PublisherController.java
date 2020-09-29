@@ -89,7 +89,7 @@ public class PublisherController {
 
         }
 
-        return "redirect:/publisher/save";
+        return "forms/publisher-form";
 
     }
 
