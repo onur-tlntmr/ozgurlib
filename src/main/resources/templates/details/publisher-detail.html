@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Yayınevi detay</title>
@@ -18,22 +18,52 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" th:href="@{/styles/main.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/styles/main.css}" type="text/css"/>
 </head>
 <body>
 <div th:replace="fragments/header :: header"/>
 
 
-
-
 <div class="container mt-5" th:object="${publisher}">
 
-    <img class="float-left mr-2 img-rounded" style="height: 180px ; width: 180px" th:src="@{/pictures/publisher.png}"/>
-    <p class="h3" th:text="*{name}"></p>
+    <div>
 
-    <p th:text="*{description}"></p>
+        <img class="float-left mr-2 img-rounded" style="height: 180px ; width: 180px"
+             th:src="@{/pictures/publisher.png}"/>
+        <p class="h3" th:text="*{name}"></p>
+
+        <p th:text="*{description}"></p>
 
 
+    </div>
+
+    <p class="h4 " style="margin-top: 15%">Yayınevinin Kitapları</p>
+
+
+    <div class="card-group text-center mt-3">
+
+
+
+        <div class="col-lg-3 p-2" th:each="book:${publisher.books}">
+
+            <a th:href="@{/book/showDetail(id=${book.id})}">
+                <div class="card p-2 h-100 card p-2 ">
+                    <img class="card-img-top" style="max-height: 227px;max-width: 227px;object-fit:contain;"
+                         th:src="|data:image/jpeg;base64,${book.picture}|">
+
+                    <div class="card-body ">
+                        <h6 class="card-title" th:text="${book.name}"></h6>
+
+                        <a th:href="@{/author/showDetail(id=${book.author.id})}"
+                           class="card-text align-text-bottom" th:text="${book.author.name}"></a>
+
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
+    </div>
 
 
 </div>
