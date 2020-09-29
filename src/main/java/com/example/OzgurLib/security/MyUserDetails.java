@@ -2,6 +2,8 @@ package com.example.OzgurLib.security;
 
 import com.example.OzgurLib.entities.Role;
 import com.example.OzgurLib.entities.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,10 +29,8 @@ public class MyUserDetails implements UserDetails {
 
         ArrayList<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        StringBuilder sb = new StringBuilder();
 
-        roleSet.stream().map(role -> authorities.add(new SimpleGrantedAuthority(role.getName())));
-
+        roleSet.forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getName())));
 
 
         return authorities;
