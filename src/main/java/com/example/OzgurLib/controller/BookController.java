@@ -109,4 +109,31 @@ public class BookController {
         return "redirect:/book/list";
     }
 
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("id") Long id,Model model){
+
+
+        Optional<Book> optionalBook = bookRepo.findById(id);
+
+        //for options
+        List<Author> authorList = authorRepo.findAll();
+
+        List<Publisher> publisherList = publisherRepo.findAll();
+
+
+        model.addAttribute(authorList);
+
+        model.addAttribute(publisherList);
+
+
+        if(optionalBook.isPresent()){
+            Book book = optionalBook.get();
+            model.addAttribute(book);
+        }
+
+        return "forms/book-form";
+
+    }
+
 }
