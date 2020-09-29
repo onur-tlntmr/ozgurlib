@@ -24,7 +24,7 @@ public class Author {
     @Lob
     private String photo;
 
-    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private Set<Book> books = new HashSet<>();
 
 
