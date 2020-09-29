@@ -30,19 +30,19 @@
     <form class="w-50 mt-4" th:object="${author}" th:action="@{/author/save}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="authorName">Yazar Adı</label>
-            <input type="text" class="form-control" id="authorName" th:field="*{name}" />
+            <input type="text" class="form-control" id="authorName" th:field="*{name}" required />
         </div>
 
         <div class="form-group">
             <label for="authorPhoto">Yazarın Fotoğrafı</label>
-            <input type="file"  name="picture" class="form-control-file" id="authorPhoto"  />
+            <input type="file"  name="picture" class="form-control-file" id="authorPhoto" required  />
         </div>
 
 
 
         <div class="form-group">
             <label for="authorDescription">Yazarın açıklaması</label>
-            <textarea class="form-control" id="authorDescription" rows="10"  th:field="*{description}" ></textarea>
+            <textarea class="form-control" id="authorDescription" rows="10"  th:field="*{description}" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
