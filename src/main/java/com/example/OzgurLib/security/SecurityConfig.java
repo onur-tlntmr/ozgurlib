@@ -28,15 +28,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure(AuthenticationManagerBuilder auth){
         auth.authenticationProvider(authenticationProvider());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/**/showDetail/**").permitAll()
+                .antMatchers("/","/about" ,"/**/showDetail/**").permitAll()
                 .antMatchers("/styles/**").permitAll()
                 .antMatchers("/pictures/**").permitAll()
                 .antMatchers("/list/**").hasAnyAuthority("ADMIN","USER")
