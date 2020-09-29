@@ -59,7 +59,6 @@ public class AuthorController {
 
         author.setPhoto(encodedPicture);
 
-        author.setId(0L); //for new record
 
         authorRepo.save(author);
 

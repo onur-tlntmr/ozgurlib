@@ -93,13 +93,18 @@ public class BookController {
         }
 
 
-
-
         book.setPicture(encodedPicture);
 
-        book.setId(0L); //for new record
 
         bookRepo.save(book);
+
+        return "redirect:/book/list";
+    }
+
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id){
+        bookRepo.deleteById(id);
 
         return "redirect:/book/list";
     }

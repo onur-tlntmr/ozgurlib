@@ -61,10 +61,8 @@ public class PublisherController {
     @PostMapping("/save")
     public String Save(@ModelAttribute("publisher") Publisher publisher){
 
-        publisher.setId(0); //for new record
 
         publisherRepo.save(publisher);
-
 
 
         return "redirect:/publisher/list";
