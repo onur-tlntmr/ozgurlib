@@ -29,6 +29,9 @@
 <div class="container d-flex align-items-center justify-content-center">
 
     <form class="w-50 mt-4" th:object="${book}" enctype="multipart/form-data" method="post" th:action="@{/book/save}">
+
+        <input type="hidden" th:field="*{id}"/>
+
         <div class="form-group">
             <label for="bookName">Kitap Adı</label>
             <input type="text" class="form-control" id="bookName" th:field="*{name}" required/>
