@@ -50,11 +50,12 @@
                 <tbody>
                 <tr th:each="publisher:${publisherList}">
                     <td class="align-middle" th:text="*{publisher.id}"></td>
-                    <td class="align-middle"><a th:href="@{/publisher/showDetail(id=${publisher.id})}" th:text="*{publisher.name}"></a></td>
+                    <td class="align-middle"><a th:href="@{/publisher/showDetail(id=${publisher.id})}"
+                                                th:text="*{publisher.name}"></a></td>
                     <td class="align-middle"><a th:href="*{publisher.webSite}"><img
                             style="width: 2em;height: 2em" th:src="@{/icons/world-wide-web.png}"/> </a></td>
                     <td class="align-middle">
-                        <a href="#" style="text-decoration: none">
+                        <a th:href="@{/publisher/showFormForUpdate(id=${publisher.id})}" style="text-decoration: none">
 
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill mr-2"
                                  fill="#00C853"
@@ -64,7 +65,7 @@
                               .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                             </svg>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/publisher/delete(id=${publisher.id})}">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="#FF2400"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -78,9 +79,9 @@
                 </tbody>
             </table>
         </div>
-
-
     </div>
+
+</div>
 
 </body>
 </html>
