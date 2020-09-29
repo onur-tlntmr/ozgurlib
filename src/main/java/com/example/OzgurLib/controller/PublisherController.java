@@ -68,4 +68,32 @@ public class PublisherController {
         return "redirect:/publisher/list";
     }
 
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam int id){
+
+        publisherRepo.deleteById(id);
+
+        return "redirect:/publisher/list";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam int id, Model model){
+
+        Optional<Publisher> optionalPublisher = publisherRepo.findById(id);
+
+        if(optionalPublisher.isPresent()){
+            Publisher publisher = optionalPublisher.get();
+
+            model.addAttribute(publisher);
+
+        }
+
+        return "redirect:/publisher/save";
+
+    }
+
+
+
+
 }
