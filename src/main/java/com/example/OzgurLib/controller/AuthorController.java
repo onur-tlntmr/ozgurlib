@@ -83,4 +83,17 @@ public class AuthorController {
         return "details/author-detail";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") long id){
+
+        authorRepo.deleteById(id);
+
+        return "redirect:/author/list";
+    }
+
+
+
+
+
+
 }
