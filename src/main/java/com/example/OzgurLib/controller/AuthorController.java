@@ -93,7 +93,18 @@ public class AuthorController {
 
 
 
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("id") long id,Model model){
 
+        Optional<Author> optionalAuthor = authorRepo.findById(id);
+
+        if(optionalAuthor.isPresent()){
+            Author author = optionalAuthor.get();
+            model.addAttribute(author);
+        }
+
+        return "forms/author-form";
+    }
 
 
 }
