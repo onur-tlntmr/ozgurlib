@@ -37,13 +37,12 @@
             </div>
 
             <table class="table table-bordered table-responsive-md table-striped text-center w-70">
-                <thead >
+                <thead>
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Fotoğraf</th>
                     <th scope="col">Yazar Adı</th>
                     <th scope="col">Action</th>
-
                 </tr>
                 </thead>
                 <tbody>
@@ -55,7 +54,7 @@
                     <td class="align-middle"><a th:href="@{/author/showDetail(id=${author.id})}" th:text="*{author.name}"></a></td>
 
                     <td class="align-middle">
-                        <a th:href="@{/author/showFormForUpdate(id=${author.id})}">
+                        <a th:href="@{/author/showFormForUpdate(id=${author.id})}" style="text-decoration: none">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill mr-2" fill="#00C853"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
