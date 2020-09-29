@@ -30,5 +30,9 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/showLoginForm")
+    public String showLoginForm(){
+        return "login";
+    }
 
 }
