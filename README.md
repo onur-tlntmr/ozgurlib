@@ -12,7 +12,7 @@ Kurulumu için gerekenler:
 </ul>
 
 <h4>1. Adım</h4>
-<p>İndirilen dizinden arşivi çıkartın.</p>
+<p>İndirdiğiniz zip dosyasını arşivden çıkarın.</p>
 <br>
 
 <h4>2. Adım</h4>
