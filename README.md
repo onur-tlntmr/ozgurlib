@@ -29,6 +29,6 @@ mvnw spring-boot:run  komudunu çalıştırın.
 
 kullanici ad, şifre ve rolleri
 
-admin test1234 [ADMIN,USER]
+admin test1234 [ADMIN,USER] <br>
 user test1234  [USER]
 
