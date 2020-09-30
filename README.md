@@ -8,6 +8,7 @@ Kurulumu için gerekenler:
   <li>Docker</li>
   <li>İnternet Bağlantısı</li>
   <li><a href="https://drive.google.com/file/d/1W_mo_J4NVgT0JIMPtGc7nh5-WM8QnEdX/view?usp=sharing">Docker-compose ve veritabanı</a></li>
+  <li>Bilgisayarınızda 3306 ve 8080 portlarının boş olması gerekiyor</li>
 </ul>
 
 <h4>1. Adım</h4>
