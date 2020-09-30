@@ -6,6 +6,7 @@ Kurulumu için gerekenler:
 <ul>
   <li>Java jdk 11</li>
   <li>Docker</li>
+  <li>Maven</li>
   <li>İnternet Bağlantısı</li>
   <li><a href="https://drive.google.com/file/d/1W_mo_J4NVgT0JIMPtGc7nh5-WM8QnEdX/view?usp=sharing">Docker-compose ve veritabanı</a></li>
   <li>Bilgisayarınızda 3306 ve 8080 portlarının boş olması gerekiyor</li>
@@ -23,13 +24,8 @@ Kurulumu için gerekenler:
 Projeyi indirin
 
 Projenin bulunduğu dizinde <br>
-Windows kullanıcıları için: mvnw.cmd package <br>
-Gnu/Linux veya mac için: ./mvnw package
+Windows kullanıcıları için: mvnw spring-boot:run <br>
+Gnu/Linux veya mac için: ./mvnw spring-boot:run
 
 komudunu çalıştırın.
 
-<h4>4. Adım</h4>
-
-target klasörünün içinde OzgurLib-0.0.1-SNAPSHOT.jar doyasını
-
-java -jar OzgurLib-0.0.1-SNAPSHOT.jar komuduyla çalıştırın.
