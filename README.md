@@ -17,7 +17,7 @@ Kurulumu için gerekenler:
 <br>
 
 <h4>2. Adım</h4>
-<p>ozgurLib klasörünün içinde şu komutu çalıştırın: </p> docker-compose.exe -f stack.yaml up
+<p>ozgurLib klasörünün içinde şu komutu çalıştırın: </p> docker-compose -f stack.yaml up
 <br>
 
 <h4>3. Adım</h4>
