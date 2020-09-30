@@ -24,8 +24,11 @@ Kurulumu için gerekenler:
 Projeyi indirin
 
 Projenin bulunduğu dizinde <br>
-Windows kullanıcıları için: mvnw spring-boot:run <br>
-Gnu/Linux veya mac için: ./mvnw spring-boot:run
+mvnw spring-boot:run  komudunu çalıştırın.
 
-komudunu çalıştırın.
+
+kullanici ad, şifre ve rolleri
+
+admin test1234 [ADMIN,USER]
+user test1234  [USER]
 
