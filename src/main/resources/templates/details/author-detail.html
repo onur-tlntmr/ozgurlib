@@ -35,32 +35,33 @@
         <p th:text="*{description}"></p>
     </div>
 
+    <div class="container float-left" style="margin-top: 20% ">
+        <p class="h4 ">Yazarın Kitapları</p>
+        <div class="card-group text-center mt-3">
 
 
-    <p class="h4 " style="margin-top: 20%">Yazarın Kitapları</p>
+            <div class="col-lg-3 p-2" th:each="book:${author.books}">
 
-    <div class="card-group text-center mt-3">
+                <a th:href="@{/book/showDetail(id=${book.id})}">
+                    <div class="card p-2 h-100 card p-2 ">
+                        <img class="card-img-top" style="max-height: 227px;max-width: 227px;object-fit:contain;"
+                             th:src="|data:image/jpeg;base64,${book.picture}|">
 
+                        <div class="card-body ">
+                            <h6 class="card-title" th:text="${book.name}"></h6>
 
-        <div class="col-lg-3 p-2" th:each="book:${author.books}">
-
-            <a th:href="@{/book/showDetail(id=${book.id})}">
-                <div class="card p-2 h-100 card p-2 ">
-                    <img class="card-img-top" style="max-height: 227px;max-width: 227px;object-fit:contain;"
-                         th:src="|data:image/jpeg;base64,${book.picture}|">
-
-                    <div class="card-body ">
-                        <h6 class="card-title" th:text="${book.name}"></h6>
-
-                        <a th:href="@{/publisher/showDetail(id=${book.publisher.id})}"
-                           class="card-text align-text-bottom" th:text="${book.publisher.name}"></a>
+                            <a th:href="@{/publisher/showDetail(id=${book.publisher.id})}"
+                               class="card-text align-text-bottom" th:text="${book.publisher.name}"></a>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
 
+            </div>
         </div>
     </div>
+
+
 
 
 </div>
